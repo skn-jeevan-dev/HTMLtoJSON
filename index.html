@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to JSON Converter</title>
+    <link rel="stylesheet" href="./design.css">
+</head>
+<body>
+<div>
+    <form id="fileForm" class="custom-dropdown">
+        <h1 style="text-align: center;">HTML to JSON Convertor</h1>
+        <label for="fileOption" style="font-size: x-large;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Choose HTML File:</label>
+        <select id="fileOption" onchange="toggleInput()">
+            <option value="userFile">Upload from PC</option>
+            <option value="sampleFile1" selected>Sample File 1</option>
+            <option value="sampleFile2">Sample File 2</option>
+        </select>
+        <input  type="file" id="htmlFile" class="custom-input" style="display: none;"  accept=".html">
+        <button type="button" style="padding: 10px;font-size: larger;" onclick="convertToJson()">Convert (JSON file Download)</button>
+    </form>
+</div>
+    <script src="./func.js"></script>
+
+</body>
+</html>
