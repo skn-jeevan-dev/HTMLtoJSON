@@ -30,7 +30,7 @@ function toggleInput() {
             const sampleFileName = (selectedOption === 'sampleFile1') ? 'html1' : 'html2';
 
             // Fetch the content of the sample file
-            fetch(`./sampleFiles/${sampleFileName}.html`)
+            fetch(`./${sampleFileName}.html`)
                 .then(response => response.text())
                 .then(htmlContent => {
                     // Continue with the conversion process
