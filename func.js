@@ -15,25 +15,25 @@ function toggleInput() {
         const selectedOption = fileOption.value;
 
         if (selectedOption === 'userFile') {
-            // User chose to upload their own file
+            
             const fileInput = document.getElementById('htmlFile');
 
-            // Check if a file is selected
+            
             if (fileInput.files.length > 0) {
-                // Continue with the conversion process
+               
                 handleFile(fileInput.files[0]);
             } else {
                 alert('Please select an HTML file.');
             }
         } else {
-            // User chose a sample file
+          
             const sampleFileName = (selectedOption === 'sampleFile1') ? 'html1' : 'html2';
 
-            // Fetch the content of the sample file
+            
             fetch(`./${sampleFileName}.html`)
                 .then(response => response.text())
                 .then(htmlContent => {
-                    // Continue with the conversion process
+                    
                     handleFileContent(htmlContent);
                 })
                 .catch(error => console.error('Error fetching sample file:', error));
@@ -45,7 +45,7 @@ function toggleInput() {
 
         reader.onload = function (e) {
             const htmlContent = e.target.result;
-            // Continue with the conversion process
+            
             handleFileContent(htmlContent);
         };
 
@@ -67,7 +67,7 @@ function toggleInput() {
             for (let i = 0; i < stateElements.length; i++) {
                 const state = stateElements[i].textContent.trim();
                 const capital = capitalElements[i].textContent.trim();
-                capitals.push({ state, capital });
+                capitals.push({ capital, state });
             }
 
             const numberOfCapitals = capitals.length;
